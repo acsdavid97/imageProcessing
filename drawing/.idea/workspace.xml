@@ -33,11 +33,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mouseDrawing.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mouseDrawing.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mouseDrawing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+            <state relative-caret-position="288">
+              <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="advancedMouse.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/advancedMouse.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="137">
+              <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -59,6 +71,7 @@
       <list>
         <option value="$PROJECT_DIR$/drawing.py" />
         <option value="$PROJECT_DIR$/mouseDrawing.py" />
+        <option value="$PROJECT_DIR$/advancedMouse.py" />
       </list>
     </option>
   </component>
@@ -309,8 +322,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mouseDrawing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+        <state relative-caret-position="288">
+          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/advancedMouse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
