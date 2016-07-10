@@ -10,8 +10,9 @@ res = cv2.resize(img,None,fx=2,fy=2, interpolation=cv2.INTER_CUBIC)
 
 heigth, width = img.shape[0:2]
 
-# Linear and cubic
+# Linear is general purpose, fast, but not beautiful
 res_lin = cv2.resize(img, (1000, 2*heigth), interpolation=cv2.INTER_LINEAR)
+# Cubic is slow, more vivid pictures
 res_cub = cv2.resize(img, (1000, 2*heigth), interpolation=cv2.INTER_CUBIC)
 
 cv2.imshow("res_lin", res_lin)

@@ -2,16 +2,11 @@ import cv2
 import numpy as np
 
 
-img = cv2.imread("messi5.jpg", 1)
+# Rotating by 90 degrees
+img = cv2.imread("messi5.jpg")
 rows, cols = img.shape[:2]
 
-M = np.float32([[1, 0, 100], [0, 1, 50]])
-'''
-This ^ is a translation matrix:
-[ 1 0 100 ]
-[ 0 1 50  ]
-'''
-
+M = cv2.getRotationMatrix2D((cols/2, rows/2), 90, 1)
 res = cv2.warpAffine(img, M, (cols, rows))
 
 cv2.imshow("res", res)
