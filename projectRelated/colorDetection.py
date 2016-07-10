@@ -1,6 +1,5 @@
 import cv2
 import numpy as np
-import time
 
 
 def update(x):
@@ -14,19 +13,21 @@ class TrackBars(object):
     def __init__(self):
         self.hue = 50
         self.threshold = 10
-        self.kernel = 5
+        self.kernel = 9
         self.minSaturation = 50
         self.minValue = 60
 
 
-def get_mask(hsvframe, setting):
+def get_mask(currframe, setting):
+    hsv = cv2.cvtColor(currframe, cv2.COLOR_BGR2HSV)
+
     lower = np.array([setting.hue - setting.threshold, setting.minSaturation, setting.minValue])
     upper = np.array([setting.hue + setting.threshold, 255, 255])
 
-    maskf = cv2.inRange(hsvframe, lower, upper)
+    maskf = cv2.inRange(hsv, lower, upper)
 
     maskf = cv2.morphologyEx(maskf, cv2.MORPH_OPEN, kernel)
-    #maskf = cv2.morphologyEx(maskf, cv2.MORPH_CLOSE, kernel)
+    maskf = cv2.morphologyEx(maskf, cv2.MORPH_CLOSE, kernel)
 
     return maskf
 
@@ -48,14 +49,14 @@ kernel = np.ones(shape, np.uint8)
 while True:
     ret, frame = cap.read()
 
-    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+    mask = get_mask(frame, settings)
+    cnt, hier = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
-    mask = get_mask(hsv, settings)
-
-
+    if len(cnt) != 0:
+        x, y, w, h = cv2.boundingRect(cnt[0])
+        cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 0, 255), 1)
 
     final = cv2.bitwise_and(frame, frame, mask=mask)
-
     cv2.imshow('original', frame)
     cv2.imshow('mask', mask)
     cv2.imshow('final', final)
