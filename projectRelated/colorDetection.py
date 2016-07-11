@@ -11,7 +11,7 @@ def update(x):
 
 
 class TrackBars(object):
-    # The current state of trackbars.
+    # The current state of track bars.
     def __init__(self):
         self.hue = 110
         self.threshold = 5
@@ -59,11 +59,10 @@ while True:
     cnt, hier = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
     max_area = 0
-
     for contour in cnt:
         # Getting maximal area from mask, whose area must be bigger than
         curr_area = cv2.contourArea(contour)
-        if curr_area > 1000  and curr_area > max_area:
+        if curr_area > 1000 and curr_area > max_area:
             maxCnt = contour
             max_area = curr_area
 
