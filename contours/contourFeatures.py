@@ -1,10 +1,11 @@
 import cv2
 import numpy as np
 
-img = cv2.imread('binary.jpg', 0)
-ret, thresh = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY_INV)
+img = cv2.imread('binary.jpg', 1)
+imgGray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+ret, thresh = cv2.threshold(imgGray, 127, 255, cv2.THRESH_BINARY_INV)
 
-contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+image, contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
 cnt = contours[0]
 M = cv2.moments(cnt)
@@ -22,6 +23,9 @@ cv2.rectangle(img, (x, y), (x + w, y + h), 0, 1)
 
 # Minimal area bounding rectangle
 rect = cv2.minAreaRect(cnt)
+box = cv2.boxPoints(rect)
+box = np.int0(box)
+cv2.drawContours(img, [box], 0, (0, 0, 255), 2)
 
 cv2.circle(img, (cx, cy), 3, (0, 255, 0), -1)
 cv2.imshow('center', img)
