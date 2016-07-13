@@ -69,14 +69,14 @@ while True:
     if max_area != 0:
         # If we found the object with maximal area, find and draw a rectangle around it
         x, y, w, h = cv2.boundingRect(maxCnt)
-        cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 0, 255), 1)
+        cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 1)
 
         # Putting coordinates of rectangle on image
         font = cv2.FONT_HERSHEY_SIMPLEX
         coord = "x:%d y:%d" % (x, y)
         cv2.putText(frame, coord, (x + 1, y + 15), font, 0.5, (0, 0, 255), 2)
-        coord = "x:%d y:%d" % (x+w, y+h)
-        cv2.putText(frame, coord, (x+w +1, y+h + 15), font, 0.5, (0, 0, 255), 2)
+        coord = "x:%d y:%d" % (x + w, y + h)
+        cv2.putText(frame, coord, (x + w + 1, y + h + 15), font, 0.5, (0, 0, 255), 2)
     '''
     final = cv2.bitwise_and(frame, frame, mask=mask)
     cv2.imshow('final', final)
@@ -87,7 +87,6 @@ while True:
     # If 'q' is pressed exit
     if cv2.waitKey(5) & 0xFF == ord('q'):
         break
-
 
 cap.release()
 cv2.destroyAllWindows()

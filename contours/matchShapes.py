@@ -1,7 +1,6 @@
 import cv2
 import numpy as np
 
-
 imgToFind = cv2.imread('toFind.jpg', 0)
 imgFromFind = cv2.imread('fromFind.jpg', 0)
 

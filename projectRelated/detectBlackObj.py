@@ -1,7 +1,6 @@
 import cv2
 import numpy as np
 
-
 imgToFind = cv2.imread('toFind.jpg', 0)
 ret, thresh = cv2.threshold(imgToFind, 127, 255, cv2.THRESH_BINARY_INV)
 

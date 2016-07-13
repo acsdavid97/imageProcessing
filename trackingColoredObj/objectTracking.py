@@ -1,7 +1,6 @@
 import cv2
 import numpy as np
 
-
 cap = cv2.VideoCapture(0)
 
 blue = np.array([120, 0, 0])
@@ -12,7 +11,7 @@ while True:
 
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
-    mask = cv2.inRange(hsv,lower_blue,upper_blue)
+    mask = cv2.inRange(hsv, lower_blue, upper_blue)
 
     res = cv2.bitwise_and(frame, frame, mask=mask)
 
@@ -25,5 +24,3 @@ while True:
 
 cap.release()
 cv2.destroyAllWindows()
-
-

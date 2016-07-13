@@ -16,8 +16,8 @@ cap = cv2.VideoCapture("pianist.avi")
 
 t1 = time.time()
 
-frameNr = int(cap.get(cv2.cv.CV_CAP_PROP_FRAME_COUNT))
-fps = cap.get(cv2.cv.CV_CAP_PROP_FPS)
+frameNr = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+fps = cap.get(cv2.CAP_PROP_FPS)
 fpsInt = int(math.floor(fps))
 nrOfLines = frameNr/fpsInt
 currFrame, currLine = 0, 0
