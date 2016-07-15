@@ -3,7 +3,7 @@ import numpy as np
 
 img = cv2.imread('chessboard.jpg', 1)
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-
+# Detect 100 corners with min 0.25 quality and 10px distance between them.
 corners = cv2.goodFeaturesToTrack(gray, 100, 0.25, 10)
 corners = np.int0(corners)
 
