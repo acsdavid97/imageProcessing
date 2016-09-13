@@ -38,8 +38,6 @@ for meth in methods:
     # Knowing the top left coordinates and dimensions of template, calculate bottom left coords
     bottom_right = (top_left[0] + w, top_left[1] + h)
     cv2.rectangle(img, top_left, bottom_right, 255, 2)
-if True
-    print 'asdf'
 
 cv2.imshow('image', img)
 # creating a window, showing image
